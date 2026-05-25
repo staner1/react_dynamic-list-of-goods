@@ -15,4 +15,4 @@ const GoodsList: React.FC<Props> = ({ goods }) => (
   </ul>
 );
 
-export default React.memo(GoodsList);
+export const GoodListComponent = React.memo(GoodsList);

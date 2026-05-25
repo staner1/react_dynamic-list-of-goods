@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.scss';
-import { GoodsList } from './GoodsList';
+import { GoodListComponent } from './GoodsList';
 
 import { getAll, get5First, getRedGoods } from './api/goods';
 import { Good } from './types/Good';
@@ -17,21 +17,21 @@ export const App: React.FC = () => {
           .then(data => {
             setGoods(data);
           })
-          .catch(e => console.log(e));
+          .catch(e => e);
 
       case 'five':
         return get5First()
           .then(data => {
             setGoods(data);
           })
-          .catch(e => console.log(e));
+          .catch(e => e);
 
       case 'red':
         return getRedGoods()
           .then(data => {
             setGoods(data);
           })
-          .catch(e => console.log(e));
+          .catch(e => e);
     }
 
     return;
@@ -65,7 +65,7 @@ export const App: React.FC = () => {
         Load red goods
       </button>
 
-      <GoodsList goods={goods} />
+      <GoodListComponent goods={goods} />
     </div>
   );
 };
