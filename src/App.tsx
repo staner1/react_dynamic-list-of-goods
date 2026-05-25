@@ -13,19 +13,25 @@ export const App: React.FC = () => {
   const handleClick = (clickType: string) => {
     switch (clickType) {
       case 'all':
-        return getAll().then(data => {
-          setGoods(data);
-        });
+        return getAll()
+          .then(data => {
+            setGoods(data);
+          })
+          .catch(e => console.log(e));
 
       case 'five':
-        return get5First().then(data => {
-          setGoods(data);
-        });
+        return get5First()
+          .then(data => {
+            setGoods(data);
+          })
+          .catch(e => console.log(e));
 
       case 'red':
-        return getRedGoods().then(data => {
-          setGoods(data);
-        });
+        return getRedGoods()
+          .then(data => {
+            setGoods(data);
+          })
+          .catch(e => console.log(e));
     }
 
     return;
